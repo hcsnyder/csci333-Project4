@@ -8,11 +8,11 @@
 template<typename V>
 class HTable {
   private:
-    std::list<Entry<V> > front;
-    std::list<Entry<V> > theTable[];
+    std::list<Entry<V> > theTable[10];
+    int size = 10;
 
   public:
-    HTable();
+    HTable(int s);
     ~HTable();
     bool find(V v);
     void insert(std::string k, V v);
