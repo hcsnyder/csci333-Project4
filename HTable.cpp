@@ -16,9 +16,9 @@ HTable<V>::~HTable() {
 }
 
 template<typename V>
-void insert(std::string k, V v) {
+void HTable<V>::insert(std::string k, V v) {
   int sum = 0;
-  for(int i=0; i<k.length; i++) {
+  for(int i=0; i<k.length(); i++) {
     sum += (int) k[i];
   }
   int key = sum % size;

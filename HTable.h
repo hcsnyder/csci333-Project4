@@ -4,6 +4,7 @@
 #include "Entry.h"
 #include <string>
 #include <list>
+#include <iostream>
 
 template<typename V>
 class HTable {
@@ -12,8 +13,8 @@ class HTable {
     int size = 10;
 
   public:
-    HTable(int s);
-    ~HTable();
+    HTable<V> (int s);
+    ~HTable<V>();
     bool find(V v);
     void insert(std::string k, V v);
     void remove(V v);
