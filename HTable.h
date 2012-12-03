@@ -3,11 +3,13 @@
 
 #include "Entry.h"
 #include <string>
+#include <list>
 
 template<typename V>
 class HTable {
-  private;
-    Entry* front;
+  private:
+    std::list<Entry<V> > front;
+    std::list<Entry<V> > theTable[];
 
   public:
     HTable();
