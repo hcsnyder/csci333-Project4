@@ -1,7 +1,7 @@
 #include "HTable.h"
 #include <string>
 
-int main {
+int main() {
   HTable<int>* intTable = new HTable<int>();
 
   intTable->insert("47", 5);
@@ -18,7 +18,7 @@ int main {
 
   delete[] intTable;
 
-  HTable<double>* dTable = new dTable<double>();
+  HTable<double>* dTable = new HTable<double>();
 
   dTable->insert("47", 5.9);
   dTable->insert("fd", 100.5);
@@ -34,7 +34,7 @@ int main {
 
   delete[] dTable;
 
-  HTable<std::strint>* sTable = new HTable<std::string>();
+  HTable<std::string>* sTable = new HTable<std::string>();
 
   sTable->insert("47", "hello");
   sTable->insert("fd", "world");
@@ -45,7 +45,7 @@ int main {
 
   sTable->print();
 
-  sTable->remove(1);
+  sTable->remove("World");
 
   sTable->print();
 
