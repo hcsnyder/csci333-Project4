@@ -4,17 +4,17 @@
 #include "Entry.h"
 #include <string>
 #include <list>
-#include <iostream>
 
 template<typename V>
 class HTable {
   private:
-    std::list<Entry<V> > theTable[10];
-    int size = 10;
+    std::list<Entry<V> > theTable[100];
+    int mxSize = 100;
 
   public:
-    HTable<V> (int s);
+    HTable<V> ();
     ~HTable<V>();
+    int keyValue(string k);
     bool find(V v);
     void insert(std::string k, V v);
     void remove(V v);
