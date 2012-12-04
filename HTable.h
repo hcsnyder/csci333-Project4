@@ -14,7 +14,6 @@ class HTable {
   public:
     HTable<V> ();
     ~HTable<V>();
-    int keyValue(string k);
     bool find(V v);
     void insert(std::string k, V v);
     void remove(V v);
