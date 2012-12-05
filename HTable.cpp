@@ -10,23 +10,6 @@ template <typename V>
 HTable<V>::~HTable() {
 }
 
-template <typename V>
-bool HTable<V>::find(V v) {
-  for(int i=0; i<1000; i++) {
-    if(theTable[i].empty() != true) {
-      for(unsigned int j=0; j < theTable[i].size(); j++) {
-        Entry<V>* curr = &(theTable[i].front());
-        if(curr->getValue() == v) {
-          std::cout << "found" << std::endl;
-          return true;
-        }
-        theTable[i].pop_front();
-        theTable[i].push_back(*curr);
-      }
-    }
-  }
-  return false;
-}
 
 template<typename V>
 void HTable<V>::insert(std::string k, V v) {
@@ -42,7 +25,6 @@ template<typename V>
 void HTable<V>::remove(V v) {
   for(int i=0; i<1000; i++) {
     if(theTable[i].empty() != true) { 
-    std::cout << theTable[i].size() << std::endl;
       Entry<V>* curr = &(theTable[i].front());
       Entry<V>* b = &(theTable[i].back());
       while(curr != b) {

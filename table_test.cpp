@@ -5,14 +5,6 @@
 int main() {
   HTable<int>* intTable = new HTable<int>();
 
-  std::string s = "9";
-  int sum = 0;
-  for(unsigned int i=0; i<s.length(); i++) {
-    sum = sum + (int) s[i];
-  }
-  sum = sum % 1000;
-  std::cout << sum << std::endl;
-
   intTable->insert("47", 5);
   intTable->insert("fd", 100);
   intTable->insert("10", 500);
@@ -20,8 +12,6 @@ int main() {
   intTable->insert("9", 30);
 
   intTable->print();
-
-  intTable->find(30);
 
   intTable->remove(5);
 
@@ -37,8 +27,6 @@ int main() {
 
   dTable->print();
 
-  //dTable->find(500.8);
-
   dTable->remove(1.47);
 
   dTable->print();
@@ -53,8 +41,6 @@ int main() {
   sTable->insert("9", "Christmas!");
 
   sTable->print();
-
-  sTable->find("CSCI");
 
   sTable->remove("World");
 
