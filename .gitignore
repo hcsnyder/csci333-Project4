@@ -1,4 +1,4 @@
-*.cpp.swp
+.HTable.cpp.swp
 *.h.gch
 *.o
 ttest
