@@ -1,3 +1,4 @@
+*.cpp.swp
 *.h.gch
 *.o
 ttest
