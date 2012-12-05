@@ -5,10 +5,10 @@
 int main() {
   HTable<int>* intTable = new HTable<int>();
 
-  std::string s = "47";
+  std::string s = "9";
   int sum = 0;
   for(unsigned int i=0; i<s.length(); i++) {
-    sum += s[i];
+    sum = sum + (int) s[i];
   }
   sum = sum % 1000;
   std::cout << sum << std::endl;
@@ -21,11 +21,11 @@ int main() {
 
   intTable->print();
 
-  intTable->remove(1);
+  intTable->find(30);
+
+  intTable->remove(5);
 
   intTable->print();
-
-  delete[] intTable;
 
   HTable<double>* dTable = new HTable<double>();
 
@@ -37,11 +37,11 @@ int main() {
 
   dTable->print();
 
+  //dTable->find(500.8);
+
   dTable->remove(1.47);
 
   dTable->print();
-
-  delete[] dTable;
 
   HTable<std::string>* sTable = new HTable<std::string>();
 
@@ -54,10 +54,10 @@ int main() {
 
   sTable->print();
 
+  sTable->find("CSCI");
+
   sTable->remove("World");
 
   sTable->print();
-
-  delete[] sTable;
 
 }
