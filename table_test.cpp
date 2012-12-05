@@ -1,8 +1,17 @@
 #include "HTable.h"
 #include <string>
+#include <iostream>
 
 int main() {
   HTable<int>* intTable = new HTable<int>();
+
+  std::string s = "47";
+  int sum = 0;
+  for(unsigned int i=0; i<s.length(); i++) {
+    sum += s[i];
+  }
+  sum = sum % 1000;
+  std::cout << sum << std::endl;
 
   intTable->insert("47", 5);
   intTable->insert("fd", 100);

@@ -8,8 +8,7 @@
 template<typename V>
 class HTable {
   private:
-    std::list<Entry<V> > theTable[100];
-    int mxSize = 100;
+    std::list<Entry<V> > theTable[1000];
 
   public:
     HTable<V> ();

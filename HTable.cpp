@@ -12,7 +12,7 @@ HTable<V>::~HTable() {
 
 template <typename V>
 bool HTable<V>::find(V v) {
-  for(int i=0; i<100; i++) {
+  for(int i=0; i<1000; i++) {
     if(theTable[i].empty() != true) {
       for(unsigned int j=0; j<theTable[i].size(); j++) {
         Entry<V>* curr = &(theTable[i].front());
@@ -31,16 +31,16 @@ template<typename V>
 void HTable<V>::insert(std::string k, V v) {
   int sum = 0;
   for(unsigned int i=0; i<k.length(); i++) {
-    sum += (int) k[i];
+    sum = sum + (int) k[i];
   }
-  int key = sum % 100;
-  Entry<V>* newEntry = new Entry<V>(k, v);
-  theTable[key].push_back(*newEntry);
+  int key = sum % 1000;
+  //Entry<V>* newEntry = new Entry<V>(k, v);
+  theTable[key].push_back(Entry<V>(k, v));
 }
 
 template<typename V>
 void HTable<V>::remove(V v) {
-  for(int i=0; i<100; i++) {
+  for(int i=0; i<1000; i++) {
     if(theTable[i].empty() != true) {
       Entry<V>* curr = &(theTable[i].front());
       Entry<V>* b = &(theTable[i].back());
@@ -67,7 +67,7 @@ void HTable<V>::remove(V v) {
 template <typename V>
 void HTable<V>::print() {
   std::string space = " ";
-  for(int i=0; i<100; i++) {
+  for(int i=0; i<1000; i++) {
     if(theTable[i].empty() != true) {
       for(unsigned int j=0; j<theTable[i].size(); j++) {
         Entry<V>* curr = &(theTable[i].front());
